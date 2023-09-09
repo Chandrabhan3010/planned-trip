@@ -3,11 +3,11 @@ import React from "react";
 
 const Tours = ({ tours, removeTour }) => {
   return (
-    <div>
+    <div className="container">
       <div>
-        <h2>plan with love</h2>
+        <h2 className="title">Plan with Love</h2>
       </div>
-      <div>
+      <div className="cards">
         {tours.map((tour) => {
           return <Card key={tour.id} {...tour} removeTour={removeTour}></Card>;
         })}
