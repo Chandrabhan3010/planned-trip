@@ -1,8 +1,21 @@
-import './App.css';
+import React,  { useState } from 'react';
+import data from './data'
+import Tours from './components/Tours'
 
-function App() {
+
+const App = () => {
+
+  const[tours , setTours] = useState(data)
+
+
+  function removeTour(id){
+    const newTours = tours.filter(tour => tour.id !== id)
+    setTours(newTours);
+  }
+
   return (
-    <div className="App">
+    <div>
+      <Tours tours={tours} removeTour={removeTour}></Tours>
     </div>
   );
 }
